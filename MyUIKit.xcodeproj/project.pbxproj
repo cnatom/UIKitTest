@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		09EDE103A1272E32377500CC /* Pods_MyUIKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06AF2897C813EE61C7E4FFAD /* Pods_MyUIKitTests.framework */; };
+		2DD9509B21943EFB823162A3 /* ATButtonArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD95EA4A92174896705CF12 /* ATButtonArea.m */; };
 		2DD9511ABF064B83CC8E0F67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD95F4CEB89C0C6322336D5 /* Assets.xcassets */; };
 		2DD954B26C91087BA1F90061 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD95CC440CCB2AEF771314E /* ViewController.m */; };
 		2DD9558D07451D7BD0F52EFF /* MyUIKitUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD959F7B6C7A2D040D8B256 /* MyUIKitUITestsLaunchTests.m */; };
 		2DD956A8CAAB49061CA98C0A /* MyUIKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD95663C83D3584DB307AD2 /* MyUIKitTests.m */; };
 		2DD95C65F2FC316EC4F561FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD95B5B2A797149B156F49F /* main.m */; };
 		2DD95D7FBDA6AF79E29D6E0F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD95819A5F3A4E1BE17B5AF /* AppDelegate.m */; };
+		2DD95DACE0460302B5840CEB /* ATUIViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD95EFA53CD592939AEBEE9 /* ATUIViewContainer.m */; };
 		2DD95E438C2337F06E9729B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD95F4E87318435F4B8BA42 /* LaunchScreen.storyboard */; };
 		2DD95FE60A5B3D45B341E7CD /* MyUIKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD95FCB014F081EFC1D13A1 /* MyUIKitUITests.m */; };
 		55D1ACB1815F7A52ED4543C2 /* Pods_MyUIKit_MyUIKitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8534D6A4147CBA37FB7E4B58 /* Pods_MyUIKit_MyUIKitUITests.framework */; };
@@ -51,7 +53,11 @@
 		2DD95C142F773493098DAF59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		2DD95CC440CCB2AEF771314E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2DD95CD5C52B30A9DD96BEE6 /* MyUIKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyUIKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DD95E810E8370F483925D53 /* ATButtonArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATButtonArea.h; sourceTree = "<group>"; };
 		2DD95E92474583936D12928E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2DD95EA4A92174896705CF12 /* ATButtonArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATButtonArea.m; sourceTree = "<group>"; };
+		2DD95EFA53CD592939AEBEE9 /* ATUIViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATUIViewContainer.m; sourceTree = "<group>"; };
+		2DD95F47D0600DB8B9B32C6C /* ATUIViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATUIViewContainer.h; sourceTree = "<group>"; };
 		2DD95F4CEB89C0C6322336D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DD95FCB014F081EFC1D13A1 /* MyUIKitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyUIKitUITests.m; sourceTree = "<group>"; };
 		357838E5CD1AC173CE9BF46A /* Pods-MyUIKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyUIKitTests.release.xcconfig"; path = "Target Support Files/Pods-MyUIKitTests/Pods-MyUIKitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +109,17 @@
 			);
 			sourceTree = "<group>";
 		};
+		2DD9550D9A21B9507560E3A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2DD95F47D0600DB8B9B32C6C /* ATUIViewContainer.h */,
+				2DD95EFA53CD592939AEBEE9 /* ATUIViewContainer.m */,
+				2DD95E810E8370F483925D53 /* ATButtonArea.h */,
+				2DD95EA4A92174896705CF12 /* ATButtonArea.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2DD9554E5E9682ECD5E4A6D9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +158,7 @@
 				2DD95C142F773493098DAF59 /* Info.plist */,
 				2DD956638EFF9AE909A01DA2 /* ViewController.h */,
 				2DD95CC440CCB2AEF771314E /* ViewController.m */,
+				2DD9550D9A21B9507560E3A6 /* Views */,
 			);
 			path = MyUIKit;
 			sourceTree = "<group>";
@@ -397,6 +415,8 @@
 				2DD95C65F2FC316EC4F561FB /* main.m in Sources */,
 				2DD95D7FBDA6AF79E29D6E0F /* AppDelegate.m in Sources */,
 				2DD954B26C91087BA1F90061 /* ViewController.m in Sources */,
+				2DD95DACE0460302B5840CEB /* ATUIViewContainer.m in Sources */,
+				2DD9509B21943EFB823162A3 /* ATButtonArea.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

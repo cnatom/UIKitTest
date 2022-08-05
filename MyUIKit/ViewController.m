@@ -8,15 +8,15 @@
 
 #import "ViewController.h"
 #import "Masonry.h"
+#import "ATUIViewContainer.h"
 
 @interface ViewController ()
 @property(nonatomic, strong) UIView *buttonArea;
 @property (nonatomic, strong)UIView *labelArea;
+@property (nonatomic, strong) UIView *textFieldArea;
 @end
 
-@implementation ViewController{
-    BOOL _isOn;
-}
+@implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,56 +47,13 @@
     }];
 
 }
-#pragma mark - 容器
--(UIView *)viewsFromArray:(NSArray *)children title:(NSString *)title {
-    UIEdgeInsets paddingContainer = UIEdgeInsetsMake(16, 16, 16, 16);
-    UIView *superView = [[UIView alloc] init];
-    //垂直容器
-    UIStackView *colsView = [[UIStackView alloc] init];
-    colsView.spacing = 10;
-    colsView.axis = UILayoutConstraintAxisVertical;
-    colsView.alignment = UIStackViewAlignmentCenter;
-    //标题
-    UILabel *titleView = UILabel.new;
-    titleView.textColor = [UIColor systemBlueColor];
-    titleView.text = title;
-    //蓝色圆角容器
-    UIView *container = UIView.new;
-    container.layer.borderColor = [[UIColor systemBlueColor] CGColor];
-    container.layer.borderWidth = 1;
-    container.layer.cornerRadius = 16;
-    //蓝色圆角容器-内部垂直布局
-    UIStackView *containerCols = [[UIStackView alloc] init];
-    containerCols.spacing = 10;
-    containerCols.axis = UILayoutConstraintAxisVertical;
-
-    //布局
-    for (NSUInteger i = 0; i < children.count; ++i) {
-        [containerCols addArrangedSubview:children[i]];
-    }
-
-    [superView addSubview:colsView];
-    [colsView addArrangedSubview:titleView];
-    [colsView addArrangedSubview:container];
-    [container addSubview:containerCols];
-    [colsView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.insets(paddingContainer);
-    }];
-    [containerCols mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.insets(paddingContainer);
-
-    }];
-
-    return superView;
-}
-
 
 
 #pragma mark - 按钮 UIButton
 
 - (UIView *)buttonArea {
     if(_buttonArea==NULL){
-        _buttonArea = [self viewsFromArray:self.genButtonsArray title:@"按钮 UIButton"];
+        _buttonArea = [[ATUIViewContainer alloc] initWithTitle:@"按钮 UIButton" andContents:self.genButtonsArray];
     }
     return _buttonArea;
 }
@@ -128,7 +85,7 @@
 
 - (UIView *)labelArea {
     if(_labelArea==NULL){
-        _labelArea = [self viewsFromArray:self.genLabelsArray title:@"文本 UILabel"];
+        _labelArea = [[ATUIViewContainer alloc] initWithTitle:@"文本 UILabel" andContents:self.genLabelsArray];
     }
     return _labelArea;
 }
