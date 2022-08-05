@@ -9,9 +9,10 @@
 #import "ViewController.h"
 #import "Masonry.h"
 #import "ATUIViewContainer.h"
+#import "ATButtonArea.h"
 
 @interface ViewController ()
-@property(nonatomic, strong) UIView *buttonArea;
+@property(nonatomic, strong) ATButtonArea *buttonArea;
 @property (nonatomic, strong)UIView *labelArea;
 @property (nonatomic, strong) UIView *textFieldArea;
 @end
@@ -51,35 +52,13 @@
 
 #pragma mark - 按钮 UIButton
 
-- (UIView *)buttonArea {
+- (ATButtonArea *)buttonArea {
     if(_buttonArea==NULL){
-        _buttonArea = [[ATUIViewContainer alloc] initWithTitle:@"按钮 UIButton" andContents:self.genButtonsArray];
+        _buttonArea = ATButtonArea.new;
     }
     return _buttonArea;
 }
 
--(NSArray *)genButtonsArray{
-    //按钮
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    NSDictionary *buttonConfigDic = @{
-            @"borderedProminentButton":UIButtonConfiguration.borderedProminentButtonConfiguration,
-            @"filledButton":UIButtonConfiguration.filledButtonConfiguration,
-            @"borderedTinted":UIButtonConfiguration.borderedTintedButtonConfiguration,
-            @"borderedButton":UIButtonConfiguration.borderedButtonConfiguration,
-            @"plainButton":UIButtonConfiguration.plainButtonConfiguration,
-            @"borderlessButton":UIButtonConfiguration.borderlessButtonConfiguration,
-            @"grayButton":UIButtonConfiguration.grayButtonConfiguration,
-            @"tintedButton":UIButtonConfiguration.tintedButtonConfiguration,
-    };
-    for(NSString* key in buttonConfigDic){
-        UIButton *button = UIButton.new;
-        UIButtonConfiguration *configuration = buttonConfigDic[key];
-        configuration.title = key;
-        button.configuration = configuration;
-        [array addObject:button];
-    }
-    return array.copy;
-}
 
 #pragma mark - 按钮 UIButton
 

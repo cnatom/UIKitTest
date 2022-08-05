@@ -7,10 +7,9 @@
 //
 
 
-#import <UIKit/UIKit.h>
+#import "ATUIViewContainer.h"
 
-
-@interface ATButtonArea : UIView
+@interface ATButtonArea : ATUIViewContainer
 
 @end
 
